@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cerr << "Argüman hatası" << std::endl;
+        std::cerr << "Arg error" << std::endl;
         return (1);
     }
 
