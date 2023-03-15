@@ -59,7 +59,7 @@ int main(int argc, char **argv)
                     break;
                 case '*':
                     s.push(second * first);
-                break;
+                    break;
                 case '/':
                     s.push(second / first);
                     break;
