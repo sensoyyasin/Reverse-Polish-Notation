@@ -3,6 +3,8 @@
 Reverse Polish Notation
 Reverse Polish notation (RPN) is a method for representing expressions in which the operator symbol is placed after the arguments being operated on. Polish notation, in which the operator comes before the operands, was invented in the 1920s by the Polish mathematician Jan Lucasiewicz. In the late 1950s, Australian philosopher and computer scientist Charles L. Hamblin suggested placing the operator after the operands and hence created reverse polish notation.
 
+![polish](https://user-images.githubusercontent.com/73845925/225279136-737fd4f7-2443-475f-b5fd-b4abef991938.png)
+
 For example, the following RPN expression will produce the sum of 2 and 3, namely 5: 2 3 +.
 
 Reverse Polish notation, also known as postfix notation, contrasts with the "infix notation" of standard arithmetic expressions in which the operator symbol appears between the operands.
@@ -18,5 +20,3 @@ In practice RPN can be conveniently evaluated using a stack structure. Reading t
 A standard infix arithmetic expression can be converted to an RPN expression using a parsing algorithm as a recursive descent parse.
 
 RPN is used in Hewlett Packard and some Texas Instruments calculators and internally in some computer languages.
-
-![polish](https://user-images.githubusercontent.com/73845925/225279136-737fd4f7-2443-475f-b5fd-b4abef991938.png)
