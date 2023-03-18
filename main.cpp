@@ -48,7 +48,11 @@ int main(int argc, char **argv)
 
             int second = s.top();
             s.pop();
-
+            if (second == 0)
+            {
+                std::cerr << "Error: Divide by 0" << std::endl;
+                exit(1);
+            }
             switch (token)
             {
                 case '+':
