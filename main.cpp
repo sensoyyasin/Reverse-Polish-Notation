@@ -1,6 +1,4 @@
-#include <iostream>
-#include <stack>
-#include <string>
+#include "RPN.hpp"
 
 int main(int argc, char **argv)
 {
@@ -18,13 +16,7 @@ int main(int argc, char **argv)
 
     while (it != line.end())
     {
-        char token = *it;
-        //When the value of the token variable is a space character,
-        //the number in the num variable is completely read and needs to be added to the stack.
-        //Therefore, if there is a number in the num variable (if num is not empty),
-        //we convert that number to an integer (std::stoi()) and add it to the stack. 
-        //Before adding it to the stack, the num variable is reset, 
-        //making the next number ready for reading.
+		char token = *it;
         if (token == ' ')
         {
             if (!num.empty())
@@ -48,7 +40,7 @@ int main(int argc, char **argv)
 
             int second = s.top();
             s.pop();
-            if (second == 0)
+            if (first == 0)
             {
                 std::cerr << "Error: Divide by 0" << std::endl;
                 exit(1);
@@ -64,17 +56,24 @@ int main(int argc, char **argv)
                 case '*':
                     s.push(second * first);
                     break;
-                case '/':
-                    s.push(second / first);
-                    break;
-                default:
-                    std::cerr << "Error: Invalid Operator" << std::endl;
-                    return (1);
-            }
-        }
-        it++;
+				case '/':
+					s.push(second / first);
+					break;
+				default:
+					std::cerr << "Error: Invalid Operator" << std::endl;
+				return (1);
+			}
+		}
+		it++;
+	}
+	if (s.size() > 0)
+	{
+		std::cout << s.top() << std::endl;
     }
-
-    std::cout << s.top() << std::endl;
+	else
+	{
+		std::cerr << "There is only 1 number" << std::endl;
+		exit(1);
+	}
     return 0;
 }
