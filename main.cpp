@@ -6,7 +6,7 @@
 /*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 22:15:31 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/03/27 22:15:31 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/03/30 20:37:26 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ int main(int argc, char **argv)
                 case '*':
                     s.push(second * first);
                     break;
-				case '/':
-					s.push(second / first);
-					break;
-				default:
-					std::cerr << "Error: Invalid Operator" << std::endl;
+                case '/':
+                    s.push(second / first);
+                    break;
+                default:
+                    std::cerr << "Error: Invalid Operator" << std::endl;
 				return (1);
 			}
 		}
