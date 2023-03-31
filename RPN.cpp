@@ -6,7 +6,7 @@
 /*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 22:15:28 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/03/31 20:57:57 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/03/31 20:59:23 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void	RPN::my_checker(int argc, char **argv)
         while(argv[i][j])
        {
             if (argv[i][j] == '/' || argv[i][j] == '+' || argv[i][j] == '*' || argv[i][j] == '-')
-       {
+            {
                 this->token_counter++;
                 this->real_token = argv[i][j];
-        }
+            }
             j++;
        }
        i++;
