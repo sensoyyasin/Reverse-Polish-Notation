@@ -3,49 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:31:32 by ysensoy           #+#    #+#             */
-/*   Updated: 2023/03/31 15:31:33 by ysensoy          ###   ########.fr       */
+/*   Updated: 2023/03/31 20:56:29 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <stack>
-#include <string>
+#include "RPN.hpp"
 
 int main(int argc, char **argv)
 {
-    if (argc != 2)
-    {
-        std::cerr << "Arg error" << std::endl;
-        return (1);
-    }
+    RPN rpn;
+
+    rpn.my_checker(argc, argv);
 
     std::stack<int> s;
     std::string line = argv[1];
-
-    int i = 1;
-    int j = 0;
-
-    int token_counter = 0;
-    while(argv[i])
-    {
-        j = 0;
-        while(argv[i][j])
-       {
-            if (argv[i][j] == '/' || argv[i][j] == '+' || argv[i][j] == '*' || argv[i][j] == '-')
-                token_counter++;
-            j++;
-       } 
-       i++;
-    }
-
-    if (token_counter == 0)
-    {
-        std::cerr << "There is no Operator" << std::endl;
-        exit(1);
-    }
 
     std::string::iterator it = line.begin();
     std::string num = "";
@@ -62,7 +36,14 @@ int main(int argc, char **argv)
             }
         }
         else if (isdigit(token))
+        {
             num += token;
+            if (num.size() > 1)
+            {
+                std::cerr << "Numbers less than 10" << std::endl;
+                exit(1);
+            }
+        }
         else
         {
             if (s.size() < 2)
@@ -76,7 +57,7 @@ int main(int argc, char **argv)
 
             int second = s.top();
             s.pop();
-            if (first == 0)
+            if (first == 0 && rpn.real_token == '/')
             {
                 std::cerr << "Error: Divide by 0" << std::endl;
                 exit(1);
@@ -97,13 +78,13 @@ int main(int argc, char **argv)
                     break;
                 default:
                     std::cerr << "Error: Invalid Operator" << std::endl;
-                    return (1);
+                return (1);
             }
         }
         it++;
     }
 	if (s.size() > 0)
-    	std::cout << s.top() << std::endl;
+        std::cout << s.top() << std::endl;
 	else
 	{
 		std::cerr << "Just 1 point" << std::endl;

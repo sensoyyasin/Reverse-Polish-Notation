@@ -6,7 +6,7 @@
 /*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 22:15:26 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/03/27 22:15:27 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/03/31 20:54:24 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,13 @@
 class RPN
 {
 public:
+	int token_counter;
+	char real_token;
+
 	RPN();
 	~RPN();
+
+	void	my_checker(int argc, char **argv);
 };
 
 #endif
