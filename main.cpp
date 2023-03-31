@@ -6,7 +6,7 @@
 /*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:31:32 by ysensoy           #+#    #+#             */
-/*   Updated: 2023/03/31 20:56:29 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/03/31 20:58:41 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,12 @@ int main(int argc, char **argv)
         }
         it++;
     }
-	if (s.size() > 0)
+    if (s.size() > 0)
         std::cout << s.top() << std::endl;
-	else
-	{
-		std::cerr << "Just 1 point" << std::endl;
-		exit(1);
-	}
+    else
+    {
+        std::cerr << "Just 1 point" << std::endl;
+        exit(1);
+    }
     return 0;
 }
