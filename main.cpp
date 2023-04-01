@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:31:32 by ysensoy           #+#    #+#             */
-/*   Updated: 2023/03/31 20:58:41 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/04/01 15:42:38 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ int main(int argc, char **argv)
         }
         else if (isdigit(token))
         {
-            num += token;
-            if (num.size() > 1)
+            if (!num.empty())
             {
-                std::cerr << "Numbers less than 10" << std::endl;
-                exit(1);
+                s.push(std::stoi(num));
+                num = "";
             }
+            num += token;
         }
         else
         {
@@ -51,7 +51,6 @@ int main(int argc, char **argv)
                 std::cerr << "Error" << std::endl;
                 return 1;
             }
-
             int first = s.top();
             s.pop();
 
